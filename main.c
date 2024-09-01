@@ -13,6 +13,10 @@ void init(void){
 }
 
 int main(int argc,char *argv[]){
+    if(argc == 1){
+	printf("pass a filename");
+	return -1;
+    }
     	uint8_t buffer[BUF_SIZE] = {0};
     	init();
         int c = 0;
@@ -54,8 +58,16 @@ int main(int argc,char *argv[]){
 
         		}
 		case KEY_LEFT:
-    			exit = 1;	
+    			if(pos[0] == 0){
+				break;
+    			}
+    			pos[0]--;
+    			move(pos[1],pos[0]);
+    			refresh();
     			break;
+    		case 27:
+        		exit = 1;
+        		break;
 		default:
     			if(c == 10){
         			last_x_index++;
@@ -64,19 +76,23 @@ int main(int argc,char *argv[]){
                 		pos[0] = 0;	
                 		move(pos[1],pos[0]);
                 		refresh();
-                		buffer[i] == c;
+                		buffer[i] = c;
         			i++;        		
         			break;
     			}else{
         		addch(c);
         		pos[0]++;
         		refresh();
-        		buffer[i] == c;
+        		buffer[i] = c;
         		i++;
         		break;
     			}
         	}
     	}
+    	FILE *open = fopen(argv[1],"w");
+	buffer[i++] = '\n';
+	fputs(buffer,open);
+	fclose(open);
     	refresh();
     	endwin();
 	return 0;
