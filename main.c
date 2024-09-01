@@ -19,7 +19,8 @@ int main(int argc,char *argv[]){
     	int i = 0;
     	int pos[2] = {0,0};
     	uint8_t exit = 0;
-    	int last_x = 0;
+    	int last_x[50] = {0};
+    	int last_x_index = 0;	
     	while(exit == 0){
         	/*
 		if(buffer[i] == 27){
@@ -41,8 +42,10 @@ int main(int argc,char *argv[]){
         			break;
         		}else{
 				pos[1]--;
-				pos[0] = last_x;
+				pos[0] = last_x[last_x_index];
 				move(pos[1],pos[0]);
+				last_x[last_x_index] = 0;
+				last_x_index--;
 				refresh();
 				break;
 
@@ -52,13 +55,14 @@ int main(int argc,char *argv[]){
     			break;
 		default:
     			if(c == 10){
+        			last_x_index++;
+        			last_x[last_x_index] = pos[0];
                 		pos[1]++;
                 		pos[0] = 0;	
                 		move(pos[1],pos[0]);
                 		refresh();
                 		buffer[i] == c;
         			i++;        		
-        			last_x = pos[0];
         			break;
     			}else{
         		addch(c);
