@@ -31,6 +31,9 @@ int main(int argc,char *argv[]){
 		c = getch();
 		switch(c){
     		case KEY_BACKSPACE:
+        		if(pos[0] == 0 && pos[1] == 0){
+				break;
+        		}
         		if(pos[0] != 0){
         			c = ' ';
         			i--;
