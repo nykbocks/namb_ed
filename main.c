@@ -45,6 +45,7 @@ int main(int argc,char *argv[]){
 				move(pos[1],pos[0]);
 				refresh();
 				break;
+
         		}
 		case KEY_LEFT:
     			exit = 1;	
