@@ -1,0 +1,80 @@
+hi guys!
+
+today i will (try) to do a simple 
+text editor in c with ncurses!
+im using WSL2 btw
+
+so,what we will try to do?
+im thinking in just a notepad
+no modes like in vim
+
+because im dumb
+
+also im not that good of a programmer
+im a begginer (beginer?) in programming in general
+-------------------------------------------------
+
+
+this is just for now,better
+because you cant type anything
+containing "q" in it
+for now!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+it still doesnt detect the ESC key
+even with keypad enabled
+
+so yeah,while in the coffe break
+i did a little research
+goddamit i closed the tab
+
+also i was seeing the sfml library
+because i generally use sdl2
+
+buzed is my little game engine that im working on
+its pretty bad and im still working on basically 
+every part of it,but its already easier to load images
+than pure SDL2,
+
+im going to test SFML too sometime....
+
+
+this is strange,i dont see waht im doing wrong
+for it to take that much time to end......
+
+i use librewolf for the default browser : )
+
+
+
+actually who cares right?
+
+now lets do the delete 
+
+
+we need to add that when our x is 0
+we jump to the end of the line above
+
+
+
+
+when i press backspace and the x is
+0,the program just ends,not even a segfault 
+just poof
+
+
+it was me just being stupid but still,
+it doesnt go to the last_x
+
+i should create a git repo for this right?
